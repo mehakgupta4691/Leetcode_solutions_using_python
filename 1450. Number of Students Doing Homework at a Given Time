@@ -1,0 +1,9 @@
+class Solution:
+    def busyStudent(self, startTime: List[int], endTime: List[int], queryTime: int) -> int:
+        count = 0
+        for x,y in zip(startTime,endTime):
+            if x <= queryTime <= y:
+                count = count +1
+            #else:
+                #count = 0
+        return(count)
