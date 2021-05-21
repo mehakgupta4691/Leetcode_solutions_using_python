@@ -1,0 +1,22 @@
+class Solution:
+    def oddCells(self, n: int, m: int, indices: List[List[int]]) -> int:
+        M = [([0]*m) for j in range(n)]
+        
+        for i in range(len(indices)):
+            b = indices[i]
+            # first case of inc rows
+            for col in range(m):
+                M[b[0]][col] += 1
+    
+            # second case of inc cols
+            for row in range(n):
+                M[row][b[1]] += 1
+        
+        count = 0
+        for i in M:
+            for j in i:
+                if j % 2 != 0:
+                    count += 1
+        return count
+        
+        
