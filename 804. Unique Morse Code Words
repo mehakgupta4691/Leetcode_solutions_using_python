@@ -1,0 +1,23 @@
+import string
+class Solution:
+    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        output = 0
+        morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        alpha = [] 
+        res = {}
+        for i in string.ascii_lowercase:
+            alpha.append(i)
+            res = dict(zip(alpha, morse))
+        
+        temp = {}
+        for word in words:
+            cword = ''
+            for letter in word:
+                cword += res[letter]
+            if cword not in temp:
+                temp[cword] = 1
+            else:
+                temp[cword] += 1
+        #print(temp)           
+        return len(temp.keys())
+      
