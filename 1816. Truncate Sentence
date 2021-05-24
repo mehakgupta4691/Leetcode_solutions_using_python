@@ -1,0 +1,14 @@
+class Solution:
+    def truncateSentence(self, s: str, k: int) -> str:
+        
+        sentence = s.split()
+        
+        lst = sentence[:k]
+        
+        str1 = " "
+        
+        str1 = str1.join(lst)
+        
+        return str1
+        
+        
