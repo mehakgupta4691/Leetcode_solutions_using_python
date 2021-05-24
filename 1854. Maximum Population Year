@@ -1,0 +1,25 @@
+class Solution:
+    def maximumPopulation(self, logs: List[List[int]]) -> int:
+        count = 0
+        arr= []
+
+        for data in logs:
+            arr.append(data[0])
+        
+        arr.sort()
+        
+        #year = 1960
+        
+        max_pop = 0
+        max_yr = arr[0]
+        #population_yr ={}
+        for year in arr:
+            for log in logs:
+                if log[0] <= year < log[1]:
+                    count +=1
+            if count > max_pop:
+                max_pop = count
+                max_yr = year
+                
+            count = 0    
+        return max_yr
