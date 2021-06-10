@@ -1,0 +1,12 @@
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        
+        start_city = []
+        #destination_city = []
+        for path in paths:
+            start_city.append(path[0])
+            #destination_city.append(path[1])
+        #print(start_city,destination_city)
+        for route in paths:
+            if route[1] not in start_city:
+                return route[1]
