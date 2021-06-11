@@ -1,0 +1,12 @@
+class Solution:
+    def countGoodRectangles(self, rectangles: List[List[int]]) -> int:
+            maxLength = 0
+            numMax = 0
+            for x in rectangles:
+                squareSide = min(x[0],x[1])
+                if squareSide == maxLength:
+                    numMax += 1
+                elif squareSide > maxLength:
+                    maxLength = squareSide
+                    numMax = 1
+            return numMax
