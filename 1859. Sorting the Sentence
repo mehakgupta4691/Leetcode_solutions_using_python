@@ -1,0 +1,6 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        s = s.split()
+        output = sorted(s, key=lambda x: x[-1])
+        res= ' '.join([str(i[:-1]) for i in output])
+        return res
