@@ -1,0 +1,6 @@
+class Solution:
+    def minSteps(self, s: str, t: str) -> int:
+        x = len(s)
+        for i in set(t):
+            x -= min(s.count(i), t.count(i))
+        return(x)
