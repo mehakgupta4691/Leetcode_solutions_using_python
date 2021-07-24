@@ -1,0 +1,10 @@
+
+class Solution:
+    def sumOfUnique(self, nums: List[int]) -> int:
+        count = Counter(nums)
+        sum1 = 0
+        for key,val in count.items() :
+            if val <= 1 :
+                sum1 = sum1 + key
+        
+        return sum1
